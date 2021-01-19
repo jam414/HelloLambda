@@ -1,0 +1,33 @@
+{
+    "AWSTemplateFormatVersion": "2010-09-09",
+    "Description": "AWS CloudFormation Template for deploying FX-Site-added AWS SES and Lambda to send email notification",
+    "Resources" : {
+        "IAMRoleForHelloLambda" : {
+            "Type": "AWS::IAM::Role",
+            "Properties" : {
+                "Description" : "IAM Role for Hello Lambda to run",
+                "AssumeRolePolicyDocument" : {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                        "Effect": "Allow",
+                        "Principal": {
+                            "Service": "lambda.amazonaws.com"
+                        },
+                        "Action": "sts:AssumeRole"
+                        }
+                    ]
+                },
+                
+                "ManagedPolicyArns" : [ 
+                    
+                    "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+                ],
+                "RoleName" : "IAM-Role-Hello-Lambda"
+                
+            }
+           
+        }
+        
+    }
+}
