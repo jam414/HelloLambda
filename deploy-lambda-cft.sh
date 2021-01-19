@@ -10,7 +10,7 @@ if [ "$flag"  == "hello-lambda-stack" ]
   echo "DELETING Hello-Lambda... "
   aws cloudformation update-stack --stack-name hello-lambda-stack --template-body file://delete-hello-lambda-cft.json --capabilities CAPABILITY_NAMED_IAM
   sleep 10
-  echo "UPDATING Hello_Lambda..."
+  echo "UPDATING Hello-Lambda..."
   aws cloudformation update-stack --stack-name hello-lambda-stack --template-body file://deploy-hello-lambda-cft.json --capabilities CAPABILITY_NAMED_IAM
  else 
   echo "CREATING Hello-Lambda....."
