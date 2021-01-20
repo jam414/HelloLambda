@@ -4,7 +4,7 @@ import os
 
 def lambda_handler(event, context):
     # TODO implement
-    message = "<h1>Hello World !</h1>"
+    message = "Hello World !"
     return {
         'statusCode': 200,
         'body': message
